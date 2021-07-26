@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fetch = require('node-fetch');
 const coingkeko_api_url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_last_updated_at=true';
 
+module
 
 const prefix = '!';
 
@@ -37,6 +38,8 @@ async function getData(){
 setInterval(getData,20000);
 
 
+
+
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
         
@@ -50,7 +53,9 @@ client.on('message', message => {
 
 	if(command === 'price'){
         client.commands.get('price').execute(message,args);
-    } 
+    }else if(command === 'targetprice'){
+        client.commands.get('targetprice').execute(message,args);
+    }
 
 });
 

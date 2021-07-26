@@ -10,8 +10,6 @@ module.exports = {
         try {
             const coingkeko_api_url = `https://api.coingecko.com/api/v3/simple/price?ids=${args[0]}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true&include_last_updated_at=true`;
             
-            
-
 
             const response = await fetch(coingkeko_api_url);
         
@@ -31,7 +29,6 @@ module.exports = {
 
             const img_data = await img_response.json();
 
-            console.log(img_data.value[0].url);
 
             const img_url = img_data.value[2].url;
 
