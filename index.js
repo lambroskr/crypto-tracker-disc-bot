@@ -29,8 +29,6 @@ async function getData(){
     const response = await fetch(coingkeko_api_url);
 
         const data = await response.json();
-
-        console.log("From Simple Price: BTC: " + data.bitcoin.usd)
         client.user.setActivity(`BTC: ${comma(data.bitcoin.usd)}$`, { type: 'WATCHING' });
         return data.bitcoin.usd;
 }

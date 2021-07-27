@@ -40,11 +40,10 @@ module.exports = {
 
                 const price = parseFloat(data[args[0]].usd).toFixed(2);
 
-            console.log("Target Price: " + args[1] + "\nCurrent Price: " + price);
+            
             if(args[2] == 'over'){
                 if(price>=args[1]){
                     message.author.send("⚠️" +capitalize(args[0]) + " price is over " + args[1] + "$ ⚠️");
-                    
                     clearInterval(myInterval);
                 }
 
